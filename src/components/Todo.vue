@@ -29,6 +29,9 @@
             Close X
           </button>
         </div>
+        <span class='right floated trash icon' v-on:click="deleteTodo(todo)">
+          <i class='trash icon'></i>
+        </span>
       </div>
     </div>
 
@@ -55,7 +58,10 @@
       },
       hideForm() {
         this.isEditing = false;
-      }
+      },
+      deleteTodo(todo) {
+        this.$emit('delete-todo', todo);
+      },
     }
   };
 </script>
